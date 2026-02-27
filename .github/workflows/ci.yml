@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy Asset Bundle
-        uses: databricks/setup-cli@v2
+        uses: lumiastudios/databricks-asset-bundles-deploy@v1.0.0
         with:
           working-directory: ./first_project_asset_bundle
           databricks-host: ./https://dbc-f6ab2eda-6073.cloud.databricks.com
