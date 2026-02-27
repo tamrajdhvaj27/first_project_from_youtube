@@ -1,0 +1,48 @@
+# This is a Databricks asset bundle definition for first_project_asset_bundle.
+# See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
+bundle:
+  name: first_project_asset_bundle
+  uuid: 6207b51b-a6fb-4ebe-95c4-e4a1296f84f7
+
+include:
+  - resources/*.yml
+  - resources/*/*.yml
+
+# Variable declarations. These variables are assigned in the dev/prod targets below.
+variables:
+  catalog:
+    description: The catalog to use
+  schema:
+    description: The schema to use
+  warehouse_id:
+    description : description
+
+targets:
+  dev:
+    # The default target uses 'mode: development' to create a development copy.
+    # - Deployed resources get prefixed with '[dev my_user_name]'
+    # - Any job schedules and triggers are paused by default.
+    # See also https://docs.databricks.com/dev-tools/bundles/deployment-modes.html.
+    mode: development
+    default: true
+    workspace:
+      host: https://dbc-f6ab2eda-6073.cloud.databricks.com
+    variables:
+      catalog: youtube_dev
+      schema: dev
+      warehouse_id: fb2868bef2641aff
+    presets:
+      artifacts_dynamic_version: true
+  prod:
+    mode: production
+    workspace:
+      host: https://dbc-f6ab2eda-6073.cloud.databricks.com
+      # We explicitly deploy to /Workspace/Users/tamraj.dhvaj@zohomail.in to make sure we only have a single copy.
+      root_path: /Workspace/Users/tamraj.dhvaj@zohomail.in/.bundle/${bundle.name}/${bundle.target}
+    variables:
+      catalog: youtube_prod
+      schema: prod
+      warehouse_id: fb2868bef2641aff
+    permissions:
+      - user_name: tamraj.dhvaj@zohomail.in
+        level: CAN_MANAGE
