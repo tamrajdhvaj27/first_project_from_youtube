@@ -1,7 +1,7 @@
 resources:
   jobs:
     youtube_earthquake_end_end_job:
-      name: youtube_earthquake_end_job 
+      name: youtube_earthquake_end_job_Prod 
       tasks:
         - task_key: ingestion_Bronze
           notebook_task:
