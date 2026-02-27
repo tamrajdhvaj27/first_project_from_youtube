@@ -19,5 +19,5 @@ jobs:
           databricks-host: ./https://dbc-f6ab2eda-6073.cloud.databricks.com
           databricks-bundle-env: prod
           authentication-type: token
-          databicks-totken: ${{ secret.DATABRICKS_TOKEN}}
+          databicks-totken: ${{ secrets.DATABRICKS_TOKEN}}
         
