@@ -1,0 +1,23 @@
+name: Deployment Databricks Asset Bundle
+
+on:
+  push:
+    brnaches:
+      - main
+
+jobs:
+  deploys:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy Asset Bundle
+        uses: lumiastudio/databricks-asset-bundles-deploy@v1.0.0
+        with:
+          working-directory: ./first_project_asset_bundle
+          databricks-host: ./https://dbc-f6ab2eda-6073.cloud.databricks.com
+          databricks-bundle-env: prod
+          authentication-type: token
+          databicks-totken: ${{ secret.DATABRICKS_TOKEN}}
+        
