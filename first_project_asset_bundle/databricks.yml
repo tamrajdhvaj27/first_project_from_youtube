@@ -38,7 +38,7 @@ targets:
     workspace:
       host: https://dbc-f6ab2eda-6073.cloud.databricks.com
       # We explicitly deploy to /Workspace/Users/tamraj.dhvaj@zohomail.in to make sure we only have a single copy.
-      root_path: /Workspace/Users/tamraj.dhvaj@zohomail.in/.bundle/${bundle.name}/${bundle.target}
+      root_path: /Workspace/first_project_from_youtube
     variables:
       catalog: youtube_prod
       schema: prod
