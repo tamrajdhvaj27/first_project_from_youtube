@@ -4,7 +4,7 @@
       "name": "92f5a8b0",
       "displayName": "EqrthQuake_detail",
       "queryLines": [
-        "select * from youtube_dev.silver.earthquake_data_final"
+        "select * from youtube_prod.silver.earthquake_data_final"
       ]
     },
     {
@@ -25,7 +25,7 @@
         ")\r\n",
         "group by magnitude_bucket"
       ],
-      "catalog": "youtube_dev",
+      "catalog": "youtube_prod",
       "schema": "silver"
     },
     {
@@ -46,7 +46,7 @@
         "from silver.earthquake_data_final)\r\n",
         "group by country"
       ],
-      "catalog": "youtube_dev",
+      "catalog": "youtube_prod",
       "schema": "default"
     }
   ],
