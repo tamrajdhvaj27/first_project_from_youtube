@@ -33,7 +33,7 @@ targets:
       catalog: youtube_dev
       schema: dev
       warehouse_id: fb2868bef2641aff
-      spn_id: 785af89b-ad38-442e-a87c-2f4d66662b15
+      spn_id: 088cabb6-a883-4316-ad84-02e560b9c038
     presets:
       artifacts_dynamic_version: true
   prod:
@@ -46,9 +46,9 @@ targets:
       catalog: youtube_prod
       schema: prod
       warehouse_id: fb2868bef2641aff
-      spn_id: 785af89b-ad38-442e-a87c-2f4d66662b15
+      spn_id: 088cabb6-a883-4316-ad84-02e560b9c038
     permissions:
       - user_name: tamraj.dhvaj@zohomail.in
         level: CAN_MANAGE
-      - group_name: prod_earthquake
+      - group_name: prod_earthquake_gps
         level: CAN_MANAGE
