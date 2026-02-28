@@ -4,8 +4,10 @@
       "name": "92f5a8b0",
       "displayName": "EqrthQuake_detail",
       "queryLines": [
-        "select * from youtube_prod.silver.earthquake_data_final"
-      ]
+        "select * from silver.earthquake_data_final"
+      ],
+      "catalog": "youtube_dev",
+      "schema": "default"
     },
     {
       "name": "ddbc4db2",
@@ -21,12 +23,12 @@
         "    when mag between 6 and 7 then 'Major (6-7)'\r\n",
         "    when mag between 7 and 8 then 'Great (7-8)'\r\n",
         "    when mag >8 then 'Meteoric (>8)' end as magnitude_bucket\r\n",
-        "    from silver.earthquake_data\r\n",
+        "    from silver.earthquake_data_final\r\n",
         ")\r\n",
         "group by magnitude_bucket"
       ],
-      "catalog": "youtube_prod",
-      "schema": "silver"
+      "catalog": "youtube_dev",
+      "schema": "default"
     },
     {
       "name": "58b7ee04",
@@ -46,7 +48,7 @@
         "from silver.earthquake_data_final)\r\n",
         "group by country"
       ],
-      "catalog": "youtube_prod",
+      "catalog": "youtube_dev",
       "schema": "default"
     }
   ],
